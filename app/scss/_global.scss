@@ -1,0 +1,311 @@
+html{
+    box-sizing: border-box;
+ }
+ 
+ *, *::before, *::after{
+     box-sizing: inherit;
+ }
+ 
+ a{
+     text-decoration: none;
+     color: inherit;
+     display: inline-block;
+ }
+ 
+ ul,
+ li{
+     margin: 0;
+     padding: 0;
+     list-style: none;
+ }
+ 
+ h1, h2, h3, h4, h5, h6{
+     margin: 0;
+ }
+ 
+ p{
+     margin: 0;
+ }
+ 
+ body{
+     color: #2f3035;
+     font-family: 'SFProDisplay-Regular', sans-serif;
+     font-size: 20px;
+     line-height: 24px;
+     font-weight: 400;
+     overflow-x: hidden;
+     min-width: 320px;
+ }
+ .container{
+     max-width: 1200px;
+     padding: 0 15px;
+     margin: 0 auto;
+ }
+ 
+ .page-section{
+     margin-bottom: 80px;
+ }
+
+//для картинок большего размера в карточках
+.product-item__img{
+    max-width: 100%;
+}
+//фильтр-табы
+.aside-filter__tabs{
+   display: flex;
+   justify-content: space-between;
+}
+
+.aside-filter__tab{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: #C4C4C4; 
+    font-family: 'SFProDisplay-Bold', sans-serif;
+    width: 50%; 
+}
+
+.aside-filter__tab.tab--active{
+    color: #2F3035;
+    font-weight: bold;
+    font-family: 'SFProDisplay-Bold', sans-serif;
+}
+
+.aside-filter__tab.tab--active span{
+    padding-bottom: 7px;
+    display: inline-block;
+    border-bottom: 2px solid #1C62CD;
+}
+ 
+.filter__item-drop{
+    position: relative;
+    cursor: pointer;
+    &::before{
+        content: '';
+        background-image: url('../img/arrow-down.svg');
+        position: absolute; 
+        left: 0;
+        bottom: 5px;
+        width: 12px;
+        height: 8px;
+        transform: rotate(0deg);
+    }
+}
+
+.filter__item-drop--active::before{
+    transform: rotate(180deg);
+}
+
+label{
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;   
+}
+
+//чекбоксы  фильтра - каталог
+.jq-checkbox, .jq-radio{
+    background: #fff;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #c4c4c4;
+    border-radius: 1px;
+    box-shadow: none;
+    vertical-align: -2px;
+    margin: 0 8px 0 0;
+}
+
+.jq-checkbox.checked, .jq-radio.checked{
+    background-color: #1C62CD;
+    border: none;
+}
+
+.jq-checkbox.checked .jq-checkbox__div{
+    width: 8px;
+    height: 6px;
+    margin: 4px 0 0 3px;
+    border-bottom: none;
+    border-left:none;
+    transform: rotate(0);   
+    background-image: url('../img/checked.svg'); 
+}
+
+.jq-radio.checked .jq-radio__div {
+    width: 0;
+    height: 0;
+    margin: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* .irs--flat.irs-with-grid {
+    width: 100%;
+} */
+
+.irs--flat {
+    width: 100%;
+    margin-top: -15px;
+}
+
+
+.irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single{
+    display: none;
+}
+
+.irs--flat .irs-min, .irs--flat .irs-max {
+    top: 55px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration-line: underline;
+    color: #2F3035;    
+    text-shadow: none;
+    background-color: transparent;
+    border-radius: 0; 
+    font-family: 'Barlow', sans-serif; 
+    visibility: visible !important; 
+    padding-left: 27px;
+}
+
+.irs-min::before,
+.irs-max::before{
+    position: absolute;
+    font-size: 14px;
+    line-height: 17px;
+    color: #C4C4C4;   
+    text-decoration: none;   
+    left: 0; 
+}
+
+.irs-min::before{
+    content: 'от'; 
+}
+
+.irs-max::before{
+    content: 'до';
+}
+
+.irs--flat .irs-line {
+    top: 25px;
+    height: 1px;
+    background-color: #E0E0E0;
+    border-radius: 0;
+}
+
+.irs--flat .irs-bar {
+    top: 25px;
+    height: 3px;
+    background-color:#1C62CD;
+}
+
+.irs--flat .irs-handle {
+    top: 22px;
+    width: 8px;
+    height: 8px;
+    background-color:#1C62CD;
+    border-radius: 50%;
+}
+
+.irs--flat .irs-handle>i:first-child {
+    background-color:transparent;
+}
+
+.irs--flat .irs-handle.state_hover>i:first-child, .irs--flat .irs-handle:hover>i:first-child {
+    background-color: #1C62CD;
+}
+
+//селект в фильтре
+.jq-selectbox__select {
+    font-size: 14px;
+    line-height: 17px;
+    color: #48494D;
+    font-family: 'Barlow', sans-serif; 
+
+    height: 20px;
+    padding: 0 25px 0 10px;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    border: none;
+    &:hover,
+    &:active{
+        background: transparent;
+        box-shadow: none;
+    }
+}
+
+.jq-selectbox__trigger {    
+    border-left: none;
+    background-image: url(../img/arrow-down.svg);
+    bottom: 5px;
+    width: 12px;
+    height: 8px;  
+    top: 6px;
+    right: 9px;
+}
+
+.jq-selectbox__trigger-arrow {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    width: 0;
+    height: 0;
+    border: none;
+}
+
+.jq-selectbox.focused .jq-selectbox__select{
+    border: none;
+}
+
+.jq-selectbox li:hover {
+    background: rgba(107, 126, 172, 0.05);
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.jq-selectbox li.selected {
+    background: rgba(107, 126, 172, 0.05);
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.jq-selectbox li{
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.jq-selectbox__dropdown {
+    border-radius: 0;
+    padding-top: 15px;
+}
+
+.menu__mobile-linewrapper{
+    display: none;
+}
+//слайдер с популярные товары
+.product-slider .slick-dots{
+    bottom: -30px;
+ }
+
+ .product-slider .slick-dots button{
+     background-color: #C4C4C4;
+ }
+
+ .product-slider .slick-dots .slick-active button{
+     background-color: #1C62CD;
+ }
+
+.aside__btn{
+    display: none;
+}
+
+.product-card__btn-mobile{
+    display: none;
+}
+
+.footer__topdrop{
+    pointer-events: none;
+}
+// после решения бага с срабатыванием селектора в футере в десктопе
+// появился новый - без перезагрузки страницы после закрытия селекта содержимое
+// его не показывалось без перезагрузки страницы. Сделал черех JS
